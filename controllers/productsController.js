@@ -37,6 +37,10 @@ exports.index = async (req, res) => {
       q.Filter_Dial = req.query.dial;
     }
 
+    if (req.query.rmc) {
+      q.Rmc = req.query.rmc;
+    }
+
     //console.log(req.query);
 
     const result = {};
