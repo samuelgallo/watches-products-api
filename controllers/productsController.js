@@ -17,6 +17,16 @@ exports.index = async (req, res) => {
 
     const q = {};
 
+    // filter FamilyName
+    if (req.query.family) {
+      q.FamilyName = req.query.family;
+    }
+
+    // filter ModelName
+    if (req.query.model) {
+      q.ModelName = req.query.model;
+    }
+
     // filter Filter_Style
     if (req.query.gender) {
       q.Filter_Style = req.query.gender;
@@ -91,4 +101,4 @@ exports.index = async (req, res) => {
   }
 };
 
-// http://localhost:3001/api/v1/products?limit=10&sku=000810AYCHX0
+// http://localhost:3001/api/v1/products?limit=10&rmc=000810AYCHX0
